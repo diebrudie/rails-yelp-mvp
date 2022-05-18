@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Reviews of <strong><%= @restaurant.name %></strong></h1>
+    <%= link_to "+ new review", new_restaurant_review_path(@restaurant), class: "btn btn-success" %>
+
+    <ul>
+    <% @reviews.each do |review| %>
+      <li><%= review.content%> —- <%= review.rating %>
+      <%= link_to "🗑",
+    review_path(review.id),
+    data: {turbo_method: :delete, turbo_confirm: "You really want to delete this review?"}
+    %></li>
+    <% end %>
+    </ul>
+</div>
