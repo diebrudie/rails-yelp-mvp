@@ -1,6 +1,7 @@
 <div class="container">
+  <div class="row">
     <h1>Reviews of <strong><%= @restaurant.name %></strong></h1>
-    <%= link_to "+ new review", new_restaurant_review_path(@restaurant), class: "btn btn-success" %>
+    <%= link_to "+ new review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
 
     <ul>
     <% @reviews.each do |review| %>
@@ -11,4 +12,5 @@
     %></li>
     <% end %>
     </ul>
+  </div>
 </div>
